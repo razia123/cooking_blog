@@ -9,6 +9,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return View('front-end.master');
+        return View('front-end.home');
     }
 }

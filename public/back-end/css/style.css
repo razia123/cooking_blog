@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("../images/bg_image.jpg");
+}
+.navbar ul li{
+    background: linear-gradient(to right,#FF512F, #DD2476);
+}
+.downloadBtn{
+    background: linear-gradient(to right,#FF512F, #DD2476);
+}
+.border-div{
+    height: 3px;
+    background: linear-gradient(to right,#FF512F, #DD2476);
+}
+.service-cart1{
+    background-color: #d2f4e9!important;
+}
+.service-cart2{
+    background-color: #f49683!important;
+}
+.service-cart3{
+    background-color: #df80aa!important;
+}
+.contact-cart1{
+    background-color: #e5eff4!important;
+}
+.contact-cart2{
+    background-color: #f9f9cf!important;
+}
+.contact-cart3{
+    background-color: #fcdfd9!important;
+}
+.contact-form{
+    background-color: #f5ebeb!important;
+}
+.mail-btn{
+    background: linear-gradient(to right,#FF512F, #DD2476);
+}
+.footer{
+    height: 50px;
+}
+
+
+
+
+
+/* .testBtn{
+    background: linear-gradient(#FF512F, #DD2476);
+}
+.container{
+    height: 100px;
+    background: linear-gradient(to right,#FF512F, #DD2476);
+
+} */
