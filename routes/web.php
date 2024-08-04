@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
@@ -24,7 +25,7 @@ Route::get('/category/{slug}', [CategoryController::class, 'categoryPostBySlug']
 Route::get('/post-detail/{slug}', [PostController::class, 'postDetailBySlug'])->name('post.detail');
 
 // Authentication
-Route::get('/login', [DashboardController::class, 'login'])->name('login');
+Route::get('/login', [AuthenticationController::class, 'index'])->name('login.index');
 
 
 // Dashboard
