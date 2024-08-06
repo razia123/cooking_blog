@@ -26,8 +26,13 @@ Route::get('/post-detail/{slug}', [PostController::class, 'postDetailBySlug'])->
 
 // Authentication
 Route::get('/login', [AuthenticationController::class, 'index'])->name('login.index');
+Route::post('/login', [AuthenticationController::class, 'login'])->name('login');
 
+Route::group(['middleware' => 'auth'], function () {
 
-// Dashboard
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    // Dashboard
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+    // Logout
+    Route::post('/logout', [AuthenticationController::class, 'logout'])->name('logout');
+});

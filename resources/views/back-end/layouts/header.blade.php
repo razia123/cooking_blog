@@ -427,9 +427,9 @@
                     <li><a class="dropdown-item d-flex" href="mail-settings.html"><i
                                 class="ti ti-adjustments-horizontal fs-18 me-2 op-7"></i>Settings</a></li>
                     <li>
-                        <form action="" method="post">
+                        <form action="{{ route('logout') }}" method="post">
                             @csrf
-                            <button>Log Out</button>
+                            <input type="submit" class="btn" value="Logout">
                         </form>
                     </li>
                 </ul>
