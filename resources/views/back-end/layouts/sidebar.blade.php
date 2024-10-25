@@ -46,7 +46,7 @@
 
                 <!-- Start::slide -->
                 <li class="slide has-sub">
-                    <a href="" class="side-menu__item">
+                    <a href="{{ route('category.index') }}" class="side-menu__item">
                         <i class="bx bx-category side-menu__icon"></i>
                         <span class="side-menu__label">Category</span>
                         

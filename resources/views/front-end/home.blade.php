@@ -101,7 +101,7 @@
                         {{-- <a href="{{ route('category.post', 'deshi') }}"> --}}
                             <div class="catagory-content-bg">
                                 <div class="catagory-content">
-                                    <a href="{{ route('category.post', 'deshi') }}" class="post-tag">The Best</a>
+                                    <a href="" class="post-tag">The Best</a>
                                     <a href="#" class="post-title">Healthy Food</a>
                                 </div>
                             </div>
@@ -165,7 +165,7 @@
                             auctor tellus quis arcu tempus, egestas tincidunt augue pellentesque. Suspendisse vestibulum sem
                             in eros maximus, pretium commodo turpis convallis. Aenean scelerisque orci quis urna tempus,
                             vitae interdum velit aliquet.</p>
-                        <a href="{{ route('post.detail', 'demo-post') }}" class="btn bueno-btn">Read More</a>
+                        <a href="" class="btn bueno-btn">Read More</a>
                     </div>
                 </div>
             </div>
@@ -185,7 +185,7 @@
                             auctor tellus quis arcu tempus, egestas tincidunt augue pellentesque. Suspendisse vestibulum sem
                             in eros maximus, pretium commodo turpis convallis. Aenean scelerisque orci quis urna tempus,
                             vitae interdum velit aliquet.</p>
-                        <a href="{{ route('post.detail', 'demo-post') }}" class="btn bueno-btn">Read More</a>
+                        <a href="" class="btn bueno-btn">Read More</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">

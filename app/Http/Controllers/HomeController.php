@@ -11,4 +11,12 @@ class HomeController extends Controller
     {
         return View('front-end.home');
     }
+
+    /**
+     * Get all posts according to category.
+     */
+    public function categoryPostBySlug($slug)
+    {
+        return view('front-end.category-post');
+    }
 }

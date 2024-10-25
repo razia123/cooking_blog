@@ -5,10 +5,22 @@ namespace App\Http\Controllers;
 class CategoryController extends Controller
 {
     /**
-     * Get all posts according to category.
+     * Get category list.
+     * 
+     * @return \Illuminate\Contracts\View\View
      */
-    public function categoryPostBySlug($slug)
+    public function index()
     {
-        return view('front-end.category-post');
+        return view('back-end.category.index');
+    }
+
+    /**
+     * Display category create form.
+     * 
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function create()
+    {
+        return view('back-end.category.create');
     }
 }
