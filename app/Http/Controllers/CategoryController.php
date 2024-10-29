@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CategoryRequest;
+
 class CategoryController extends Controller
 {
     /**
@@ -22,5 +24,13 @@ class CategoryController extends Controller
     public function create()
     {
         return view('back-end.category.create');
+    }
+
+    /**
+     * 
+     */
+    public function store(CategoryRequest $categoryRequest)
+    {
+        dd($categoryRequest);
     }
 }

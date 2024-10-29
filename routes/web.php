@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
     // Category Routes
     Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
     Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
+    Route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
 
     // Logout
     Route::post('/logout', [AuthenticationController::class, 'logout'])->name('logout');
