@@ -633,6 +633,9 @@
     <!-- Quill Editor JS -->
     <script src="../back-end/libs/quill/quill.min.js"></script>
 
+    <!-- Sweet alert JS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+
 </body>
 
 </html>

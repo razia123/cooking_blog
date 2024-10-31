@@ -51,6 +51,9 @@
     <script src="{{ asset("front-end/js/plugins/plugins.js") }}"></script>
     <!-- Active js -->
     <script src="{{ asset("front-end/js/active.js") }}"></script>
+
+    <!-- Sweet alert js -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

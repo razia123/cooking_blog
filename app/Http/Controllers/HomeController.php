@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+
 class HomeController extends Controller
 {
     /**
@@ -9,7 +11,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return View('front-end.home');
+        $categories = Category::where('status', 1)->orderBy('id', 'desc')->get();
+        return View('front-end.home', compact('categories'));
     }
 
     /**
