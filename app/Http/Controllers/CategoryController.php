@@ -41,10 +41,8 @@ class CategoryController extends Controller
      */
     public function storeCategory(CategoryRequest $categoryRequest)
     {
-        // dd($categoryRequest->category_logo);
         $category = $this->categoryService->store($categoryRequest->all());
         session()->flash('success', 'Category created successfully!');
-        return redirect()->back();
-      
+        return redirect()->back(); 
     }
 }

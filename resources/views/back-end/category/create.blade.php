@@ -48,13 +48,13 @@
                         </div>
                         <div class="mb-3">
                             <label for="form-password" class="form-label fs-14 text-dark">Logo</label>
-                            <!-- <input type="file" name="category_logo" class="filepond">  -->
-                            <input type="file" name="category_logo">
+                            <input type="file" name="category_logo" class="filepond">
+                            <!-- <input type="file" name="category_logo"> -->
                         </div>
                         <div class="mb-3">
                             <label for="form-password" class="form-label fs-14 text-dark">Thumbnail</label>
-                            <!-- <input type="file" name="category_thumbnail" class="filepond1"> -->
-                            <input type="file" name="category_thumbnail">
+                            <input type="file" name="category_thumbnail" class="filepond1">
+                            <!-- <input type="file" name="category_thumbnail"> -->
                         </div>
                         <input type="submit" class="btn btn-primary" value="Create">
                     </form>
@@ -74,11 +74,23 @@
 
     <script>
         FilePond.registerPlugin(FilePondPluginImagePreview);
-        FilePond.setOptions({
-                instantUpload: false
+        function filepondImage(imageId) {
+            FilePond.create(imageId, {
+                labelIdle: `Drag & Drop your picture or <span class="filepond--label-action">Browse</span>`,
+                imagePreviewHeight: 270,
+                imageCropAspectRatio: "1:1",
+                imageResizeTargetWidth: 200,
+                imageResizeTargetHeight: 200,
+                styleLoadIndicatorPosition: "center bottom",
+                styleProgressIndicatorPosition: "right bottom",
+                styleButtonRemoveItemPosition: "center bottom",
+                styleButtonProcessItemPosition: "right bottom",
+                storeAsFile: true,
+                allowReorder: true,
             });
-        FilePond.create(document.querySelector('.filepond'));
-        FilePond.create(document.querySelector('.filepond1'));
+        }
+        filepondImage(document.querySelector('.filepond'));
+        filepondImage(document.querySelector('.filepond1'));
 
     </script>
 
