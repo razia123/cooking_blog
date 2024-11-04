@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
+use App\Services\CategoryService;
 use App\Services\ImageHandler;
 use Str;
 
 class CategoryController extends Controller
 {
-    public function __construct(protected ImageHandler $imageHandler)
+    public function __construct(protected CategoryService $categoryService)
     {
-        $this->imageHandler = $imageHandler;
+        $this->categoryService = $categoryService;
     }
 
     /**
@@ -31,29 +32,17 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('back-end.category.create');
+        $categories = Category::where('status', 1)->get();
+        return view('back-end.category.create', compact('categories'));
     }
 
     /**
-     * 
+     * Store category.
      */
     public function storeCategory(CategoryRequest $categoryRequest)
     {
-        if(isset($categoryRequest->category_logo)){
-            $logoName = $this->imageHandler->uploadImage($categoryRequest->category_logo, 'storage/category/logo');
-        }
-        if (isset($categoryRequest->category_thumbnail)) {
-            $thumbnailName = $this->imageHandler->uploadImage($categoryRequest->category_thumbnail, 'storage/category/thumbnail');
-        }
-        Category::create([
-            'name' => $categoryRequest->category_name,
-            'slug' => Str::slug($categoryRequest->category_name),
-            'description' => $categoryRequest->description,
-            'logo' => $logoName,
-            'thumbnail' => $thumbnailName,
-            'parent_category_id' => $categoryRequest->parent_category,
-        ]);
-
+        // dd($categoryRequest->category_logo);
+        $category = $this->categoryService->store($categoryRequest->all());
         session()->flash('success', 'Category created successfully!');
         return redirect()->back();
       

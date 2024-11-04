@@ -112,17 +112,6 @@
                     </div>
                 </div>
             @endforeach
-
-            <div class="single-post-catagory mb-30">
-                <img src="{{ asset("front-end/img/bg-img/6.jpg") }}" alt="">
-                <!-- Content -->
-                <div class="catagory-content-bg">
-                    <div class="catagory-content">
-                        <a href="#" class="post-tag">The Best</a>
-                        <a href="#" class="post-title">Vegetarian Food</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
