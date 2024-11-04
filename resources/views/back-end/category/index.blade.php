@@ -14,85 +14,37 @@
                 <table class="table text-nowrap">
                     <thead class="table-primary">
                         <tr>
-                            <th scope="col">User Name</th>
-                            <th scope="col">Transaction Id</th>
-                            <th scope="col">Created</th>
+                            <th scope="col">#</th>
+                            <th scope="col">Category Logo</th>
+                            <th scope="col">Category Title</th>
                             <th scope="col">Status</th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">Harshrath</th>
-                            <td>#5182-3467</td>
-                            <td>24 May 2022</td>
-                            <td>
-                                <div class="hstack gap-2 fs-15">
-                                    <a href="javascript:void(0);"
-                                        class="btn btn-icon btn-sm btn-success-transparent rounded-pill"><i
-                                            class="ri-download-2-line"></i></a>
-                                    <a href="javascript:void(0);"
-                                        class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
-                                            class="ri-edit-line"></i></a>
-                                    <a href="javascript:void(0);"
-                                        class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
-                                            class="ri-delete-bin-line"></i></a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Zozo Hadid</th>
-                            <td>#5182-3412</td>
-                            <td>02 July 2022</td>
-                            <td>
-                                <div class="hstack gap-2 fs-15">
-                                    <a href="javascript:void(0);"
-                                        class="btn btn-icon btn-sm btn-success-transparent rounded-pill"><i
-                                            class="ri-download-2-line"></i></a>
-                                    <a href="javascript:void(0);"
-                                        class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
-                                            class="ri-edit-line"></i></a>
-                                    <a href="javascript:void(0);"
-                                        class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
-                                            class="ri-delete-bin-line"></i></a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Martiana</th>
-                            <td>#5182-3423</td>
-                            <td>15 April 2022</td>
-                            <td>
-                                <div class="hstack gap-2 fs-15">
-                                    <a href="javascript:void(0);"
-                                        class="btn btn-icon btn-sm btn-success-transparent rounded-pill"><i
-                                            class="ri-download-2-line"></i></a>
-                                    <a href="javascript:void(0);"
-                                        class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
-                                            class="ri-edit-line"></i></a>
-                                    <a href="javascript:void(0);"
-                                        class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
-                                            class="ri-delete-bin-line"></i></a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Alex Carey</th>
-                            <td>#5182-3456</td>
-                            <td>17 March 2022</td>
-                            <td>
-                                <div class="hstack gap-2 fs-15">
-                                    <a href="javascript:void(0);"
-                                        class="btn btn-icon btn-sm btn-success-transparent rounded-pill"><i
-                                            class="ri-download-2-line"></i></a>
-                                    <a href="javascript:void(0);"
-                                        class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
-                                            class="ri-edit-line"></i></a>
-                                    <a href="javascript:void(0);"
-                                        class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
-                                            class="ri-delete-bin-line"></i></a>
-                                </div>
-                            </td>
-                        </tr>
+                        @foreach ($categories as $category)
+                            <tr>
+                                <th scope="row">{{ $loop->iteration }}</th>
+                                <td>
+                                    <img src="{{ asset($category->logo) }}" alt="" width="50" height="50">
+                                </td>
+                                <td>{{ $category->name }}</td>
+                                <td>{{ $category->status }}</td>
+                                <td>
+                                    <div class="hstack gap-2 fs-15">
+                                        <a href="javascript:void(0);"
+                                            class="btn btn-icon btn-sm btn-success-transparent rounded-pill"><i
+                                                class="ri-download-2-line"></i></a>
+                                        <a href="javascript:void(0);"
+                                            class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i
+                                                class="ri-edit-line"></i></a>
+                                        <a href="javascript:void(0);"
+                                            class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i
+                                                class="ri-delete-bin-line"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
