@@ -15,7 +15,8 @@
         content="admin,admin dashboard,admin panel,admin template,bootstrap,clean,dashboard,flat,jquery,modern,responsive,premium admin templates,responsive admin,ui,ui kit.">
 
     <!-- Favicon -->
-    {{-- <link rel="icon" href="{{ asset('/backend-assets/images/brand-logos/favicon.ico') }}" type="image/x-icon"> --}}
+    {{--
+    <link rel="icon" href="{{ asset('/backend-assets/images/brand-logos/favicon.ico') }}" type="image/x-icon"> --}}
 
     <!-- Choices JS -->
     <script src="{{ asset('/back-end/libs/choices.js/public/assets/scripts/choices.min.js') }}"></script>
@@ -52,7 +53,7 @@
     <link rel="stylesheet" href="{{ asset('/back-end/libs/jsvectormap/css/jsvectormap.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('/back-end/libs/swiper/swiper-bundle.min.css') }}">
-
+    @stack('css')
 </head>
 
 <body>
@@ -70,8 +71,8 @@
                         data-bs-target="#switcher-home" type="button" role="tab" aria-controls="switcher-home"
                         aria-selected="true">Theme Styles</button>
                     <button class="nav-link" id="switcher-profile-tab" data-bs-toggle="tab"
-                        data-bs-target="#switcher-profile" type="button" role="tab"
-                        aria-controls="switcher-profile" aria-selected="false">Theme Colors</button>
+                        data-bs-target="#switcher-profile" type="button" role="tab" aria-controls="switcher-profile"
+                        aria-selected="false">Theme Colors</button>
                 </div>
             </nav>
             <div class="tab-content" id="nav-tabContent">
@@ -108,8 +109,8 @@
                                     <label class="form-check-label" for="switcher-ltr">
                                         LTR
                                     </label>
-                                    <input class="form-check-input" type="radio" name="direction"
-                                        id="switcher-ltr" checked>
+                                    <input class="form-check-input" type="radio" name="direction" id="switcher-ltr"
+                                        checked>
                                 </div>
                             </div>
                             <div class="col-4">
@@ -117,8 +118,7 @@
                                     <label class="form-check-label" for="switcher-rtl">
                                         RTL
                                     </label>
-                                    <input class="form-check-input" type="radio" name="direction"
-                                        id="switcher-rtl">
+                                    <input class="form-check-input" type="radio" name="direction" id="switcher-rtl">
                                 </div>
                             </div>
                         </div>
@@ -370,9 +370,9 @@
                                         id="switcher-menu-primary">
                                 </div>
                                 <div class="form-check switch-select me-3">
-                                    <input class="form-check-input color-input color-gradient"
-                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Gradient Menu"
-                                        type="radio" name="menu-colors" id="switcher-menu-gradient">
+                                    <input class="form-check-input color-input color-gradient" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Gradient Menu" type="radio" name="menu-colors"
+                                        id="switcher-menu-gradient">
                                 </div>
                                 <div class="form-check switch-select me-3">
                                     <input class="form-check-input color-input color-transparent"
@@ -388,23 +388,23 @@
                             <div class="d-flex switcher-style pb-2">
                                 <div class="form-check switch-select me-3">
                                     <input class="form-check-input color-input color-white" data-bs-toggle="tooltip"
-                                        data-bs-placement="top" title="Light Header" type="radio"
-                                        name="header-colors" id="switcher-header-light" checked>
+                                        data-bs-placement="top" title="Light Header" type="radio" name="header-colors"
+                                        id="switcher-header-light" checked>
                                 </div>
                                 <div class="form-check switch-select me-3">
                                     <input class="form-check-input color-input color-dark" data-bs-toggle="tooltip"
-                                        data-bs-placement="top" title="Dark Header" type="radio"
-                                        name="header-colors" id="switcher-header-dark">
+                                        data-bs-placement="top" title="Dark Header" type="radio" name="header-colors"
+                                        id="switcher-header-dark">
                                 </div>
                                 <div class="form-check switch-select me-3">
                                     <input class="form-check-input color-input color-primary" data-bs-toggle="tooltip"
-                                        data-bs-placement="top" title="Color Header" type="radio"
-                                        name="header-colors" id="switcher-header-primary">
+                                        data-bs-placement="top" title="Color Header" type="radio" name="header-colors"
+                                        id="switcher-header-primary">
                                 </div>
                                 <div class="form-check switch-select me-3">
-                                    <input class="form-check-input color-input color-gradient"
-                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Gradient Header"
-                                        type="radio" name="header-colors" id="switcher-header-gradient">
+                                    <input class="form-check-input color-input color-gradient" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Gradient Header" type="radio"
+                                        name="header-colors" id="switcher-header-gradient">
                                 </div>
                                 <div class="form-check switch-select me-3">
                                     <input class="form-check-input color-input color-transparent"
@@ -515,8 +515,7 @@
 
         @yield('content')
 
-        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModal"
-            aria-hidden="true">
+        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModal" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-body">
@@ -543,14 +542,14 @@
                         </div>
                         <div class="mt-4">
                             <p class="font-weight-semibold text-muted mb-2">Are You Looking For...</p>
-                            <span class="search-tags"><i class="fe fe-user me-2"></i>People<a
-                                    href="javascript:void(0)" class="tag-addon"><i class="fe fe-x"></i></a></span>
+                            <span class="search-tags"><i class="fe fe-user me-2"></i>People<a href="javascript:void(0)"
+                                    class="tag-addon"><i class="fe fe-x"></i></a></span>
                             <span class="search-tags"><i class="fe fe-file-text me-2"></i>Pages<a
                                     href="javascript:void(0)" class="tag-addon"><i class="fe fe-x"></i></a></span>
                             <span class="search-tags"><i class="fe fe-align-left me-2"></i>Articles<a
                                     href="javascript:void(0)" class="tag-addon"><i class="fe fe-x"></i></a></span>
-                            <span class="search-tags"><i class="fe fe-server me-2"></i>Tags<a
-                                    href="javascript:void(0)" class="tag-addon"><i class="fe fe-x"></i></a></span>
+                            <span class="search-tags"><i class="fe fe-server me-2"></i>Tags<a href="javascript:void(0)"
+                                    class="tag-addon"><i class="fe fe-x"></i></a></span>
                         </div>
                         <div class="my-4">
                             <p class="font-weight-semibold text-muted mb-2">Recent Search :</p>
@@ -580,10 +579,11 @@
                 </div>
             </div>
         </div>
-       @include('back-end.layouts.footer')
+        @include('back-end.layouts.footer')
+
     </div>
 
-   
+
 
     <!-- Popper JS -->
     <script src="../back-end/libs/@popperjs/core/umd/popper.min.js"></script>
@@ -605,7 +605,7 @@
     <script src="../back-end/js/simplebar.js"></script>
 
     <!-- Color Picker JS -->
-    
+
 
 
     <!-- JSVector Maps JS -->
@@ -636,6 +636,7 @@
     <!-- Sweet alert JS -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
 
+    @stack('script')
 </body>
 
 </html>

@@ -114,7 +114,6 @@
             </div>
         </div>
     </div>
-    </div>
     <!-- ##### Catagory Area End ##### -->
 
     <!-- ##### Big Posts Area Start ##### -->
