@@ -53,7 +53,7 @@
                     </a>
                 </li>
                 <li class="slide has-sub">
-                    <a href="" class="side-menu__item">
+                    <a href="{{ route('post.index') }}" class="side-menu__item">
                         <i class="bx bx-cog side-menu__icon"></i>
                         <span class="side-menu__label">Posts</span>
                         

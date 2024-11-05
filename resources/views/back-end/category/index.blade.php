@@ -29,7 +29,7 @@
                                     <img src="{{ asset($category->logo) }}" alt="" width="50" height="50">
                                 </td>
                                 <td>{{ $category->name }}</td>
-                                <td>{{ $category->status }}</td>
+                                <td>{{ $category->status == 1 ? 'Active' : 'Inactive' }}</td>
                                 <td>
                                     <div class="hstack gap-2 fs-15">
                                         <a href="javascript:void(0);"

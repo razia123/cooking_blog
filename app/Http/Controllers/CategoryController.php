@@ -44,6 +44,6 @@ class CategoryController extends Controller
     {
         $category = $this->categoryService->store($categoryRequest->all());
         session()->flash('success', 'Category created successfully!');
-        return redirect()->back(); 
+        return redirect()->route('category.index'); 
     }
 }
