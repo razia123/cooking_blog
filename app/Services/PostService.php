@@ -20,7 +20,8 @@ class PostService
             if (isset($postRequest['feature_image'])) {
                 $imageName = $this->imageHandler->uploadImage($postRequest['feature_image'], 'storage/post');
             }
-
+            $userId = auth()->id();
+            
             Post::create([
                 'title' => $postRequest['post_title'],
                 'slug' => Str::slug($postRequest['post_title']),
@@ -28,9 +29,10 @@ class PostService
                 'long_description' => $postRequest['long_description'],
                 'image' => $imageName,
                 'published_date' => now(),
-                'user_id ' => auth()->id(),
+                'user_id' => auth()->id(),
 
             ]);
+            
             return true;
         } catch (Exception $e) {
             return false;

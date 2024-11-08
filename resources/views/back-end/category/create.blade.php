@@ -4,6 +4,7 @@
 @push('css')
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
     <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.css" rel="stylesheet">
 @endpush
 
 @section('content')
@@ -33,10 +34,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="form-password" class="form-label fs-14 text-dark">Description</label>
-                                <div id="editor" style="height: 200px;"></div>
-                                <input type="hidden" name="content" id="quill-content">
-
-                                <!-- <textarea name="description" class="form-control" id="" cols="30" rows="10"></textarea> -->
+                                <textarea name="description" class="form-control" id="description" cols="30" rows="10"></textarea>
                             </div>
                             <div class="mb-3">
                                 <label for="form-password" class="form-label fs-14 text-dark">Parent Category</label>
@@ -69,9 +67,14 @@
     <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
     <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
     <script src="https://unpkg.com/filepond-plugin-file-poster/dist/filepond-plugin-file-poster.js"></script>
-    <script src="{{ asset('/back-end/js/my-js/filepond.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.js"></script>
+    <script src="{{ asset('/back-end/js/my-js/common.js') }}"></script>
     <script>
-        filepondImage(document.querySelector('.categoryLogo'));
-        filepondImage(document.querySelector('.categoryThumbnail'));
+        $(document).ready(function() {
+            filepondImage(document.querySelector('.categoryLogo'));
+            filepondImage(document.querySelector('.categoryThumbnail'));
+            summerText('description');
+        });
     </script>
 @endpush
