@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Post;
 
 class HomeController extends Controller
 {
@@ -12,7 +13,8 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::where('status', 1)->orderBy('id', 'desc')->get();
-        return View('front-end.home', compact('categories'));
+        $posts = Post::where('status', 1)->orderBy('id', 'desc')->get();
+        return View('front-end.home', compact('categories','posts'));
     }
 
     /**
