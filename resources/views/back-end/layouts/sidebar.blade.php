@@ -75,6 +75,13 @@
                     </a>
                 </li>
                 <li class="slide has-sub">
+                    <a href="{{ route('slide.index') }}" class="side-menu__item">
+                        <i class="bx bx-slider side-menu__icon"></i>
+                        <span class="side-menu__label">Slide</span>
+                
+                    </a>
+                </li>
+                <li class="slide has-sub">
                     <a href="{{ route('post.index') }}" class="side-menu__item">
                         <i class="bx bx-cog side-menu__icon"></i>
                         <span class="side-menu__label">Posts</span>

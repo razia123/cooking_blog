@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SlideController;
 use App\Http\Controllers\TagController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
@@ -47,8 +48,14 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Tag Routes
     Route::get('/tags', [TagController::class, 'index'])->name('tag.index');
-    // Route::get('/post-create', [PostController::class, 'create'])->name('post.create');
-    // Route::post('/post-store', [PostController::class, 'store'])->name('post.store');
+    Route::get('/tag-create', [TagController::class, 'create'])->name('tag.create');
+    Route::post('/tag-store', [TagController::class, 'store'])->name('tag.store');
+
+    // Slider Routes
+    Route::get('/slider', [SlideController::class, 'index'])->name('slide.index');
+    Route::get('/slider-create', [SlideController::class, 'create'])->name('slider.create');
+    Route::post('/slider-store', [SlideController::class, 'store'])->name('slider.store');
+
 
 
 
