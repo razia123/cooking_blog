@@ -134,10 +134,10 @@
                             <a href="#" class="post-title">{{ $post->title }}</a>
                             <div class="post-meta">
                                 <a href="#" class="post-date">{{ $post->published_date  }}</a>
-                                <a href="#" class="post-author">By {{ $post->user_id  }}</a>
+                                <a href="#" class="post-author">By {{ $post->user->name  }}</a>
                             </div>
                             <p>{!! $post->sort_description  !!}</p>
-                            <a href="" class="btn bueno-btn">Read More</a>
+                            <a href="{{ route('post.detail', ['slug' => $post->slug]) }}" class="btn bueno-btn">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -153,7 +153,7 @@
                                 <a href="#" class="post-author">By {{ $post->user_id  }}</a>
                             </div>
                             <p>{!! $post->sort_description  !!}</p>
-                            <a href="" class="btn bueno-btn">Read More</a>
+                            <a href="{{ route('post.detail', ['slug' => $post->slug]) }}" class="btn bueno-btn">Read More</a>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
@@ -243,86 +243,6 @@
                 <div class="sidebar-area">
                     <!-- Single Widget Area -->
                     <div class="single-widget-area post-widget">
-
-                        <!-- Single Post Area -->
-                        <div class="single-post-area d-flex">
-                            <!-- Blog Thumbnail -->
-                            <div class="blog-thumbnail">
-                                <img src="{{ asset('front-end/img/bg-img/12.jpg') }}" alt="">
-                            </div>
-                            <!-- Blog Content -->
-                            <div class="blog-content">
-                                <a href="#" class="post-title">Friend eggs with ham</a>
-                                <div class="post-meta">
-                                    <a href="#" class="post-date">July 11, 2018</a>
-                                    <a href="#" class="post-author">By Julia Stiles</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Post Area -->
-                        <div class="single-post-area d-flex mb-30">
-                            <!-- Blog Thumbnail -->
-                            <div class="blog-thumbnail">
-                                <img src="{{ asset('front-end/') }}img/bg-img/13.jpg" alt="">
-                            </div>
-                            <!-- Blog Content -->
-                            <div class="blog-content">
-                                <a href="#" class="post-title">Burger with fries</a>
-                                <div class="post-meta">
-                                    <a href="#" class="post-date">July 11, 2018</a>
-                                    <a href="#" class="post-author">By Julia Stiles</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Post Area -->
-                        <div class="single-post-area d-flex">
-                            <!-- Blog Thumbnail -->
-                            <div class="blog-thumbnail">
-                                <img src="{{ asset('front-end/img/bg-img/14.jpg') }}" alt="">
-                            </div>
-                            <!-- Blog Content -->
-                            <div class="blog-content">
-                                <a href="#" class="post-title">Avocado &amp; Oisters</a>
-                                <div class="post-meta">
-                                    <a href="#" class="post-date">July 11, 2018</a>
-                                    <a href="#" class="post-author">By Julia Stiles</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Post Area -->
-                        <div class="single-post-area d-flex">
-                            <!-- Blog Thumbnail -->
-                            <div class="blog-thumbnail">
-                                <img src="{{ asset('front-end/img/bg-img/15.jpg') }}" alt="">
-                            </div>
-                            <!-- Blog Content -->
-                            <div class="blog-content">
-                                <a href="#" class="post-title">Tortilla prawns</a>
-                                <div class="post-meta">
-                                    <a href="#" class="post-date">July 11, 2018</a>
-                                    <a href="#" class="post-author">By Julia Stiles</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Post Area -->
-                        <div class="single-post-area d-flex">
-                            <!-- Blog Thumbnail -->
-                            <div class="blog-thumbnail">
-                                <img src="{{ asset('front-end/img/bg-img/16.jpg') }}" alt="">
-                            </div>
-                            <!-- Blog Content -->
-                            <div class="blog-content">
-                                <a href="#" class="post-title">Burger with fries</a>
-                                <div class="post-meta">
-                                    <a href="#" class="post-date">July 11, 2018</a>
-                                    <a href="#" class="post-author">By Julia Stiles</a>
-                                </div>
-                            </div>
-                        </div>
 
                     </div>
                 </div>

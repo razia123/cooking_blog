@@ -24,4 +24,14 @@ class HomeController extends Controller
     {
         return view('front-end.category-post');
     }
+
+    /**
+     * Get post detail page by slug.
+     */
+    public function postDetailBySlug($slug)
+    {
+        $allPosts = Post::where('status', 1)->get();
+        $post = Post::with('user')->where('slug', $slug)->where('status', 1)->first();
+        return view('front-end.post-detail', compact('post', 'allPosts'));
+    }
 }

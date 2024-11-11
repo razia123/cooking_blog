@@ -31,7 +31,7 @@
                                 <img src="{{ asset($post->image) }}" alt="" width="50" height="50">
                             </td>
                             <td>{{ $post->title }}</td>
-                            <td>{{ $post->user->name }}</td>
+                            <td>{{ @$post->user->name }}</td>
                             <td>{{ $post->count_views }}</td>
                             <td>
                                 {{ $post->status == 1 ? 'Active' : 'Inactive' }}

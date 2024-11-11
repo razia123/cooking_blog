@@ -42,11 +42,5 @@ class PostController extends Controller
         return redirect()->route('post.index');
     }
 
-    /**
-     * Get post detail page by slug.
-     */
-    public function postDetailBySlug($slug)
-    {
-        return view('front-end.post-detail');
-    }
+    
 }
