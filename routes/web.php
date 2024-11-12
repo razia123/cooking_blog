@@ -29,6 +29,8 @@ Route::get('/post-detail/{slug}', [HomeController::class, 'postDetailBySlug'])->
 // Authentication
 Route::get('/login', [AuthenticationController::class, 'index'])->name('login.index');
 Route::post('/login', [AuthenticationController::class, 'login'])->name('login');
+Route::get('/customer-login', [AuthenticationController::class, 'customerLogin'])->name('login.customer');
+Route::get('/customer-register', [AuthenticationController::class, 'customerRegister'])->name('register.customer');
 
 // Admin Routes
 Route::group(['middleware' => 'auth'], function () {

@@ -32,7 +32,7 @@
 
                         <!-- Login/Register -->
                         <div class="login-area">
-                            <a href="#">Login / Register</a>
+                            <a href="{{ route('login.customer') }}">Login / Register</a>
                         </div>
                     </div>
                     <!-- Nav End -->

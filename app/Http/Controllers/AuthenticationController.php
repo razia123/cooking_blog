@@ -60,4 +60,21 @@ class AuthenticationController extends Controller
         $request->session()->regenerateToken();
         return redirect()->route('login');
     }
+
+    /**
+     * 
+     */
+    public function customerLogin()
+    {
+        return view('authentication.front-end.login');
+    }
+
+    /**
+     * 
+     */
+    public function customerRegister()
+    {
+        return view('authentication.front-end.register');
+
+    }
 }
