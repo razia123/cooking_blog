@@ -28,7 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        $categories = Category::where('status', 1)->get();
+        $categories = Category::get();
         return view('back-end.post.create', compact('categories'));
     }
 
