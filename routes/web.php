@@ -5,6 +5,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SlideController;
+use App\Http\Controllers\TagController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +29,8 @@ Route::get('/post-detail/{slug}', [HomeController::class, 'postDetailBySlug'])->
 // Authentication
 Route::get('/login', [AuthenticationController::class, 'index'])->name('login.index');
 Route::post('/login', [AuthenticationController::class, 'login'])->name('login');
+Route::get('/customer-login', [AuthenticationController::class, 'customerLogin'])->name('login.customer');
+Route::get('/customer-register', [AuthenticationController::class, 'customerRegister'])->name('register.customer');
 
 // Admin Routes
 Route::group(['middleware' => 'auth'], function () {
@@ -43,6 +47,19 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/posts', [PostController::class, 'index'])->name('post.index');
     Route::get('/post-create', [PostController::class, 'create'])->name('post.create');
     Route::post('/post-store', [PostController::class, 'store'])->name('post.store');
+
+    // Tag Routes
+    Route::get('/tags', [TagController::class, 'index'])->name('tag.index');
+    Route::get('/tag-create', [TagController::class, 'create'])->name('tag.create');
+    Route::post('/tag-store', [TagController::class, 'store'])->name('tag.store');
+
+    // Slider Routes
+    Route::get('/slider', [SlideController::class, 'index'])->name('slide.index');
+    Route::get('/slider-create', [SlideController::class, 'create'])->name('slider.create');
+    Route::post('/slider-store', [SlideController::class, 'store'])->name('slider.store');
+
+
+
 
     // Logout
     Route::post('/logout', [AuthenticationController::class, 'logout'])->name('logout');

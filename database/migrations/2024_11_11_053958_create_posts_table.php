@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('sort_description')->nullable();
             $table->text('long_description')->nullable();
             $table->string('image')->nullable();
+            $table->foreignId('tag_id')->nullable()->constrained('tags')->cascadeOnDelete();
             $table->foreignId('user_id')->nullable()->constrained('users')->cascadeOnDelete();
             $table->tinyInteger('status')->default(0);
             $table->timestamp('published_date')->nullable();
