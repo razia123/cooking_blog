@@ -35,4 +35,13 @@ class HomeController extends Controller
         $post = Post::with('user')->where('slug', $slug)->where('status', 1)->first();
         return view('front-end.post-detail', compact('post', 'allPosts'));
     }
+
+    /**
+     * 
+     */
+    public function categories()
+    {
+        $categories = Category::where('status', 1)->get();
+        return view('front-end.category.categories', compact('categories'));
+    }
 }

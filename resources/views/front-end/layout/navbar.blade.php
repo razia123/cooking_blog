@@ -25,7 +25,7 @@
                     <div class="classynav">
                         <ul>
                             <li><a href="{{ route('index') }}">Home</a></li>
-                            <li><a href="#">Categories</a></li>
+                            <li><a href="{{ route('categories') }}">Categories</a></li>
                             <li><a href="#">Blog</a></li>
                             <li><a href="#">Contact</a></li>
                         </ul>
