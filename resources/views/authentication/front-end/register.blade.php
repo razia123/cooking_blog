@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ragistration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -47,7 +48,7 @@
         <div class="card mb-3">
             <div class="row g-0 d-flex align-items-center">
                 <div class="col-4"></div>
-                <div class="col-lg-4 justify-content-center">
+                <div class="col-lg-4 justify-content-center border mt-5 shadow-sm">
                     <div class="col-12 text-center">
                         <a href="{{ route('index') }}">
                             <img src="{{ asset('common/image/logo.png') }}" alt="" />
@@ -63,6 +64,15 @@
                             @csrf
                             <!-- Email input -->
                             <div data-mdb-input-init class="form-outline mb-4">
+                                <label class="form-label" for="form2Example1">User Name</label>
+                                <input type="text" name="user_name" id="form2Example1" class="form-control" />
+                                @if ($errors->has('user_name'))
+                                    <div class="alert alert-danger">
+                                        {{ $errors->first('user_name') }}
+                                    </div>
+                                @endif
+                            </div>
+                            <div data-mdb-input-init class="form-outline mb-4">
                                 <label class="form-label" for="form2Example1">Email address</label>
                                 <input type="email" name="email" id="form2Example1" class="form-control" />
                                 @if ($errors->has('email'))
@@ -71,7 +81,15 @@
                                     </div>
                                 @endif
                             </div>
-
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                <label class="form-label" for="form2Example1">Phone</label>
+                                <input type="email" name="email" id="form2Example1" class="form-control" />
+                                @if ($errors->has('email'))
+                                    <div class="alert alert-danger">
+                                        {{ $errors->first('email') }}
+                                    </div>
+                                @endif
+                            </div>
                             <!-- Password input -->
                             <div data-mdb-input-init class="form-outline mb-4">
                                 <label class="form-label" for="form2Example2">Password</label>
@@ -103,8 +121,29 @@
 
                             <!-- Submit button -->
                             <input type="submit" data-mdb-button-init data-mdb-ripple-init
-                                class="btn btn-block mb-4 text-white" style="background-color: #b0c364" value="Sign in">
+                                class="btn btn-block text-white" style="background-color: #b0c364" value="Sign in">
                         </form>
+                    </div>
+                    <div class="col-12 text-center mb-5">
+                        <button type="button" data-mdb-button-init data-mdb-ripple-init
+                            class="btn btn-link btn-floating mx-1">
+                            <i class="fab fa-facebook-f" style="color: black;"></i>
+                        </button>
+
+                        <button type="button" data-mdb-button-init data-mdb-ripple-init
+                            class="btn btn-link btn-floating mx-1">
+                            <i class="fab fa-google" style="color: black;"></i>
+                        </button>
+
+                        <!-- <button type="button" data-mdb-button-init data-mdb-ripple-init
+                                                    class="btn btn-link btn-floating mx-1">
+                                                    <i class="fab fa-twitter"></i>
+                                                </button> -->
+
+                        <button type="button" data-mdb-button-init data-mdb-ripple-init
+                            class="btn btn-link btn-floating mx-1">
+                            <i class="fab fa-github" style="color: black;"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="col-4"></div>

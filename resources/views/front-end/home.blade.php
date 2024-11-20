@@ -18,9 +18,9 @@
     <div class="hero-area">
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
-                @foreach ($posts as $key => $post)
+                @foreach ($sliders as $key => $slide)
                     <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                        <img src="{{ asset($post->image) }}" class="d-block w-100" alt="...">
+                        <img src="{{ asset($slide->image) }}" class="d-block w-100" alt="...">
                     </div>
                 @endforeach
             </div>
@@ -41,6 +41,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <!-- Single Post Catagory -->
+                 
                 @foreach (@$categories as $category)
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="single-post-catagory mb-30" style="height: 250px; overflow: hidden;">
@@ -59,7 +60,7 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @endforeach 
             </div>
         </div>
     </div>

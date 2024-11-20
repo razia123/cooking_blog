@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Slide;
 
 class HomeController extends Controller
 {
@@ -12,10 +13,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $sliders = Slide::orderBy('id', 'desc')->get();
         $categories = Category::where('status', 2)->orderBy('id', 'desc')->get();
         $posts = Post::with('user')->where('status', 1)->orderBy('id', 'desc')->take(3)->get();
         $mostViewedPosts = Post::with('user')->where('status', 1)->orderBy('id', 'desc')->get();
-        return View('front-end.home', compact('categories','posts', 'mostViewedPosts'));
+        return View('front-end.home', compact('sliders', 'categories','posts', 'mostViewedPosts'));
     }
 
     /**
@@ -41,7 +43,7 @@ class HomeController extends Controller
      */
     public function categories()
     {
-        $categories = Category::where('status', 1)->get();
+        $categories = Category::get();
         return view('front-end.category.categories', compact('categories'));
     }
 }
