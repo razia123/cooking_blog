@@ -9,17 +9,8 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+        </script>
     <style>
-        .card {
-            height: 100vh !important;
-        }
-
-        .rounded-t-5 {
-            border-top-left-radius: 0.5rem;
-            border-top-right-radius: 0.5rem;
-        }
-
         .form-check-input:checked {
             background-color: #b0c364 !important;
             border-color: #b0c364 !important;
@@ -43,12 +34,11 @@
 
 <body>
     <!-- Section: Design Block -->
-    <section class="text-center text-lg-start">
+    <section class="text-center text-lg-start bg-success p-4">
         <div class="card mb-3">
             <div class="row g-0 d-flex align-items-center">
-                <div class="col-lg-6 d-none d-lg-flex">
-                    <img src="{{ asset('common/image/login_page.jpg') }}" alt="Yummy food"
-                        class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
+                <div class="col-lg-6 d-none d-lg-flex ">
+                    <img src="{{ asset('common/image/login_page.jpg') }}" alt="Yummy food" class="img-fluid" />
                 </div>
                 <div class="col-lg-6">
                     <div class="col-12 text-center">
@@ -89,8 +79,8 @@
                                 <div class="col d-flex justify-content-center">
                                     <!-- Checkbox -->
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="form2Example31" checked />
+                                        <input class="form-check-input" type="checkbox" value="" id="form2Example31"
+                                            checked />
                                         <label class="form-check-label" for="form2Example31">
                                             Remember me
                                         </label>
@@ -108,19 +98,13 @@
                         </form>
                     </div>
                     {{-- <div class="col-12 text-center">
-              <button
-                class="btn btn-primary mt-1"
-                style="width: 70%; background-color: rgb(221 178 82)"
-              >
-                Google Login
-              </button>
-              <button
-                class="btn mt-1 text-white"
-                style="width: 70%; background-color: #0e3c79"
-              >
-                Facebook Login
-              </button>
-            </div> --}}
+                        <button class="btn btn-primary mt-1" style="width: 70%; background-color: rgb(221 178 82)">
+                            Google Login
+                        </button>
+                        <button class="btn mt-1 text-white" style="width: 70%; background-color: #0e3c79">
+                            Facebook Login
+                        </button>
+                    </div> --}}
                 </div>
             </div>
         </div>
