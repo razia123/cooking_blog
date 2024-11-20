@@ -12,9 +12,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $categories = Category::where('status', 1)->orderBy('id', 'desc')->get();
-        $posts = Post::where('status', 1)->orderBy('id', 'desc')->get();
-        return View('front-end.home', compact('categories','posts'));
+        $categories = Category::where('status', 2)->orderBy('id', 'desc')->get();
+        $posts = Post::with('user')->where('status', 1)->orderBy('id', 'desc')->take(3)->get();
+        $mostViewedPosts = Post::with('user')->where('status', 1)->orderBy('id', 'desc')->get();
+        return View('front-end.home', compact('categories','posts', 'mostViewedPosts'));
     }
 
     /**
@@ -33,5 +34,14 @@ class HomeController extends Controller
         $allPosts = Post::where('status', 1)->get();
         $post = Post::with('user')->where('slug', $slug)->where('status', 1)->first();
         return view('front-end.post-detail', compact('post', 'allPosts'));
+    }
+
+    /**
+     * 
+     */
+    public function categories()
+    {
+        $categories = Category::where('status', 1)->get();
+        return view('front-end.category.categories', compact('categories'));
     }
 }

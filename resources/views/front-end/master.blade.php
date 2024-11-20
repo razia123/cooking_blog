@@ -13,6 +13,7 @@
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset("front-end/img/core-img/favicon.ico") }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ asset("front-end/style.css") }}">
@@ -28,7 +29,7 @@
 
         <!-- Logo Area -->
         <div class="logo-area">
-            <a href="index.html"><img src="{{ asset("front-end/img/core-img/logo.png") }}" alt=""></a>
+            <a href="{{ route('index') }}"><img src="{{ asset("front-end/img/core-img/logo.png") }}" alt=""></a>
         </div>
 
         @include('front-end.layout.navbar')
@@ -46,7 +47,7 @@
     <!-- Popper js -->
     <script src="{{ asset("front-end/js/bootstrap/popper.min.js") }}"></script>
     <!-- Bootstrap js -->
-    <script src="{{ asset("front-end/js/bootstrap/bootstrap.min.js") }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- All Plugins js -->
     <script src="{{ asset("front-end/js/plugins/plugins.js") }}"></script>
     <!-- Active js -->

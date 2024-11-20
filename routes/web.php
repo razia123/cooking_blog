@@ -23,7 +23,8 @@ use Illuminate\Support\Facades\Route;
 
 // Home page routes
 Route::get('/', [HomeController::class, 'index'])->name('index');
-// Route::get('/category/{slug}', [HomeController::class, 'categoryPostBySlug'])->name('category.post');
+Route::get('/categories', [HomeController::class, 'categories'])->name('categories');
+Route::get('/category/{slug}', [HomeController::class, 'categoryPostBySlug'])->name('category.post');
 Route::get('/post-detail/{slug}', [HomeController::class, 'postDetailBySlug'])->name('post.detail');
 
 // Authentication
