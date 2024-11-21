@@ -114,10 +114,10 @@
                                 <i class="fab fa-facebook-f" style="color: black;"></i>
                             </button>
 
-                            <button type="button" data-mdb-button-init data-mdb-ripple-init
+                            <a href="{{ route('google.login') }}" class="btn" data-mdb-button-init data-mdb-ripple-init
                                 class="btn btn-link btn-floating mx-1">
                                 <i class="fab fa-google" style="color: black;"></i>
-                            </button>
+                            </a>
 
                             <!-- <button type="button" data-mdb-button-init data-mdb-ripple-init
                                 class="btn btn-link btn-floating mx-1">

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SlideController;
@@ -32,6 +33,8 @@ Route::get('/login', [AuthenticationController::class, 'index'])->name('login.in
 Route::post('/login', [AuthenticationController::class, 'login'])->name('login');
 Route::get('/customer-login', [AuthenticationController::class, 'customerLogin'])->name('login.customer');
 Route::get('/customer-register', [AuthenticationController::class, 'customerRegister'])->name('register.customer');
+Route::get('/auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
+Route::get('/auth/google/call-back', [GoogleController::class, 'handleGoogleCallback']);
 
 // Admin Routes
 Route::group(['middleware' => 'auth'], function () {
