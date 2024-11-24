@@ -42,6 +42,9 @@ Route::group(['middleware' => 'auth'], function () {
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+    // Profile Routes
+    Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
+
     // Category Routes
     Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
     Route::get('/category-create', [CategoryController::class, 'create'])->name('category.create');
@@ -61,8 +64,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/slider', [SlideController::class, 'index'])->name('slide.index');
     Route::get('/slider-create', [SlideController::class, 'create'])->name('slider.create');
     Route::post('/slider-store', [SlideController::class, 'store'])->name('slider.store');
-
-
 
 
     // Logout

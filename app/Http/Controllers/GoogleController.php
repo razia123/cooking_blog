@@ -10,7 +10,7 @@ use Laravel\Socialite\Facades\Socialite;
 class GoogleController extends Controller
 {
     /**
-     * 
+     * Redirect to google login form.
      */
     public function redirectToGoogle()
     {
@@ -18,32 +18,30 @@ class GoogleController extends Controller
     }
 
     /**
-     * 
+     * Login with google.
      */
     public function handleGoogleCallback()
     {
+        
         try {
-            $googleUser = Socialite::driver('google')->stateless()->user();
-
-            // Check if the user already exists
-            $user = User::where('email', $googleUser->getEmail())->first();
-
+            $googleUser = Socialite::driver('google')->user();
+            // dd($googleUser);
+            $email = $googleUser->getEmail();  
+            $user = User::where('email', $email)->first();
+           
             if (!$user) {
-                // Register the user if not exists
                 $user = User::create([
                     'name' => $googleUser->getName(),
                     'email' => $googleUser->getEmail(),
                     'google_id' => $googleUser->getId(),
-                    'password' => bcrypt(uniqid()), // Temporary password
+                    'password' => bcrypt(uniqid()), 
                 ]);
             }
-
-            // Log the user in
             Auth::login($user);
 
-            return redirect()->route('home'); // Replace 'home' with your dashboard route
+            return redirect()->route('dashboard'); 
         } catch (\Exception $e) {
-            return redirect()->route('login')->with('error', 'Something went wrong during login.');
+            return redirect()->route('login.customer')->with('error', 'Something went wrong during login.');
         }
     }
 }

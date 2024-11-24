@@ -38,6 +38,12 @@
                         <span class="side-menu__label">Dashboards</span>
                     </a>
                 </li>
+                <li class="slide has-sub">
+                    <a href="{{ route('profile') }}" class="side-menu__item">
+                        <i class="bx bxs-user-account side-menu__icon"></i>
+                        <span class="side-menu__label">Profile</span>
+                    </a>
+                </li>
                 <!-- End::slide -->
                 <li class="slide__category"><span class="category-name">USERS</span></li>
                 <li class="slide has-sub">
@@ -49,7 +55,7 @@
                 </li>
                 <li class="slide has-sub">
                     <a href="" class="side-menu__item">
-                        <i class="bx bx-user side-menu__icon"></i>
+                        <i class="bx bx-user-plus side-menu__icon"></i>
                         <span class="side-menu__label">Create User</span>
                 
                     </a>

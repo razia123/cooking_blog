@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+
 class DashboardController extends Controller
 {
     /**
@@ -10,5 +12,15 @@ class DashboardController extends Controller
     public function index()
     {
         return view('back-end.dashboard');
+    }
+
+    /**
+     * Get profile update form.
+     */
+    public function profile()
+    {
+        $userId = auth()->id();
+        $profile = User::with('userInfo')->find($userId);
+        return view('back-end.profile',compact('profile'));
     }
 }

@@ -41,4 +41,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * User Information.
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\hasOne.
+     */
+    public function userInfo()
+    {
+        return $this->hasOne(UserInformation::class);
+    }
 }
