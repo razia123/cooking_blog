@@ -44,6 +44,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Profile Routes
     Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
+    Route::post('/update-profile', [DashboardController::class, 'updateProfile'])->name('profile.update');
 
     // Category Routes
     Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
