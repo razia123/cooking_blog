@@ -37,5 +37,7 @@ class DashboardController extends Controller
     public function updateProfile(ProfileRequest $request)
     {
         $this->profileService->updateProfile($request->all());
+        session()->flash('success', 'Profile updated successfully!');
+        return redirect()->back();
     }
 }

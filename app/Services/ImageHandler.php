@@ -13,4 +13,14 @@ class ImageHandler{
         $file->move(public_path($path), $imageName);
         return $path . '/' . $imageName;
     }
+
+    /**
+     * Summary of deleteImage.
+     */
+    public function deleteImage($path)
+    {
+        if (file_exists(public_path($path))) {
+            unlink(public_path($path));
+        }
+    }
 }

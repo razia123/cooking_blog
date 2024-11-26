@@ -63,8 +63,8 @@
                                 </div>
                                 <div class="col-6">
                                     <label for="form-text" class="form-label fs-14 text-dark">LinkedIn</label>
-                                    <input type="text" name="linkedIn" class="form-control" id="form-text"
-                                        placeholder="" value="{{ @$profile->userInfo->linkedIn }}">
+                                    <input type="text" name="linkedin" class="form-control" id="form-text"
+                                        placeholder="" value="{{ @$profile->userInfo->linkedin }}">
                                 </div>
                                 <div class="col-6">
                                     <label for="form-text" class="form-label fs-14 text-dark">Instagram</label>
@@ -79,13 +79,13 @@
                         </div>
                         <div class="mb-3">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="option1" {{ @$profile->userInfo->gender == 0 ? 'checked' : '' }}>
+                                <input class="form-check-input" type="radio" name="gender" id="inlineRadio1"
+                                    value="0" {{ @$profile->userInfo->gender == 0 ? 'checked' : '' }}>
                                 <label class="form-check-label" for="inlineRadio1">Male</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                    value="option2" {{ @$profile->userInfo->gender == 1 ? 'checked' : '' }}>
+                                <input class="form-check-input" type="radio" name="gender" id="inlineRadio2"
+                                    value="1" {{ @$profile->userInfo->gender == 1 ? 'checked' : '' }}>
                                 <label class="form-check-label" for="inlineRadio2">Female</label>
                             </div>
                         </div>
